@@ -52,6 +52,7 @@ items.
 
 ``` r
 library(shortIRT)
+#> Warning: il pacchetto 'shortIRT' è stato creato con R versione 4.3.2
 ```
 
 First, generate the responses of 1,000 respondents to the 20 items of
@@ -67,7 +68,7 @@ the full-length test:
  data <- sirt::sim.raschtype(true_theta, b = b, fixed.a = a)
 ```
 
-Then, use the EIP for the development of the 5-item STF, incuding also
+Then, use the EIP for the development of the 5-item STF, including also
 the matrix of the item parameters and the true $\theta$ of the subjects
 (these arguments are not mandatory).
 
@@ -77,11 +78,11 @@ stf_eip <- eip(data, item_par = parameters, starting_theta = true_theta, num_ite
 # the optimal item for each theta target
 stf_eip$item_stf
 #>     item theta_target item_info stf_length
-#> 8    I08      -2.0400 0.6501277      STF-5
-#> 42   I12      -0.7595 0.8160365      STF-5
-#> 65   I05       0.5205 0.8583194      STF-5
-#> 113  I23       1.7950 0.7219224      STF-5
-#> 145  I25       3.0700 0.3271706      STF-5
+#> 2    I02      -2.1550 0.6658502      STF-5
+#> 52   I22      -1.0295 0.7540494      STF-5
+#> 74   I14       0.0915 0.8915867      STF-5
+#> 95   I05       1.2110 0.8691818      STF-5
+#> 144  I24       2.3350 0.4488457      STF-5
 ```
 
 Plot the test information function of both the full-length test and the
@@ -104,13 +105,13 @@ between $\theta$s:
 ``` r
 bias_eip <- diff_theta(stf_eip, true_theta = true_theta)
 head(bias_eip)
-#>    true_theta     stf_theta  difference abs_difference
-#> 1 -0.52859426  3.694458e-80 -0.52859426     0.52859426
-#> 2  0.19472782  3.694458e-80  0.19472782     0.19472782
-#> 3  1.86363627  8.015177e-79  1.86363627     1.86363627
-#> 4 -0.44136616  3.694458e-80 -0.44136616     0.44136616
-#> 5  0.03330607 -7.390894e-79  0.03330607     0.03330607
-#> 6  0.57423427  6.055238e-79  0.57423427     0.57423427
+#>   true_theta     stf_theta difference abs_difference
+#> 1 -1.2522175 -3.822527e-79 -1.2522175      1.2522175
+#> 2  0.6921845  2.936331e-79  0.6921845      0.6921845
+#> 3  1.6889284  1.397124e-78  1.6889284      1.6889284
+#> 4 -1.6417720 -3.822527e-79 -1.6417720      1.6417720
+#> 5  0.6852846  2.952000e-79  0.6852846      0.6852846
+#> 6 -1.9871210 -1.462003e-78 -1.9871210      1.9871210
 ```
 
 Finally, bias can also be plotted with the function `plot_difference()`

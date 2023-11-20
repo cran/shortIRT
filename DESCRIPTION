@@ -2,7 +2,7 @@ Package: shortIRT
 Type: Package
 Title: Procedures Based on Item Response Theory Models for the
         Development of Short Test Forms
-Version: 0.1.0
+Version: 0.1.2
 Author: Ottavia M. Epifania [aut, cre, cph]
         Pasquale Anselmi [aut, ctb]
         Egidio Robusto [ctb]
@@ -17,6 +17,6 @@ RoxygenNote: 7.2.3
 Suggests: rmarkdown, sirt, testthat (>= 3.0.0), V8
 Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2023-11-02 06:34:20 UTC; huawei
+Packaged: 2023-11-20 10:45:37 UTC; huawei
 Repository: CRAN
-Date/Publication: 2023-11-02 08:20:02 UTC
+Date/Publication: 2023-11-20 11:30:02 UTC

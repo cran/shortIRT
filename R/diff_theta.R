@@ -3,9 +3,9 @@
 #' Compute the difference between a starting value of \eqn{\theta} and the \eqn{\theta} estimated with the STF
 #'
 #' @param results The object obtained from the stf-generating functions
-#' @param true_theta vector, optional vector of length equal to the number of rows in the original data frame with the true \eqn{\theta} of the respondents. Default is NULL, such that the \eqn{\theta} estimated with the full-length test will be considered as the starting \eqn{\theta}
+#' @param starting_theta vector, optional vector of length equal to the number of rows in the original data frame with the true \eqn{\theta} of the respondents. Default is NULL, such that the \eqn{\theta} estimated with the full-length test will be considered as the starting \eqn{\theta}
 #'
-#' @returns A data frame with number of rows equal to the number of respondents and 3 columns, one with the starting/true \eqn{\theta}, one with the \eqn{\theta} estimated with the STF, and the difference between the starting/true and the estimated one.
+#' @returns A data frame with number of rows equal to the number of respondents and 3 columns, one with the starting/true \eqn{\theta}, one with the \eqn{\theta} estimated with the STF, and the difference between the estimated \eqn{\theta} and the starting/true \eqn{\theta}
 #' @export
 #'
 #' @examples
@@ -22,18 +22,18 @@
 #' # without starting theta
 #' my_diff <- diff_theta(stf)
 #' head(my_diff)
-diff_theta <- function(results, true_theta = NULL) {
+diff_theta <- function(results, starting_theta = NULL) {
   difference <- results$theta
-  if (is.null(true_theta)) {
+  if (is.null(starting_theta)) {
     lab <- "starting_theta"
   } else {
-    if (length(true_theta) != nrow(difference)) {
+    if (length(starting_theta) != nrow(difference)) {
       stop("True theta must have the same length as the estimated theta")
     }
-    difference$starting_theta <- true_theta
+    difference$starting_theta <- starting_theta
     lab <- "true_theta"
   }
-  difference$difference <- difference$starting_theta - difference$stf_theta
+  difference$difference <- difference$stf_theta-  difference$starting_theta
   difference$abs_difference <- abs(difference$difference)
   names(difference)[colnames(difference) == "starting_theta"] <- lab
   return(difference)

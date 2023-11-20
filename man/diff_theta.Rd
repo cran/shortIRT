@@ -4,15 +4,15 @@
 \alias{diff_theta}
 \title{Difference between \eqn{\theta}s}
 \usage{
-diff_theta(results, true_theta = NULL)
+diff_theta(results, starting_theta = NULL)
 }
 \arguments{
 \item{results}{The object obtained from the stf-generating functions}
 
-\item{true_theta}{vector, optional vector of length equal to the number of rows in the original data frame with the true \eqn{\theta} of the respondents. Default is NULL, such that the \eqn{\theta} estimated with the full-length test will be considered as the starting \eqn{\theta}}
+\item{starting_theta}{vector, optional vector of length equal to the number of rows in the original data frame with the true \eqn{\theta} of the respondents. Default is NULL, such that the \eqn{\theta} estimated with the full-length test will be considered as the starting \eqn{\theta}}
 }
 \value{
-A data frame with number of rows equal to the number of respondents and 3 columns, one with the starting/true \eqn{\theta}, one with the \eqn{\theta} estimated with the STF, and the difference between the starting/true and the estimated one.
+A data frame with number of rows equal to the number of respondents and 3 columns, one with the starting/true \eqn{\theta}, one with the \eqn{\theta} estimated with the STF, and the difference between the estimated \eqn{\theta} and the starting/true \eqn{\theta}
 }
 \description{
 Compute the difference between a starting value of \eqn{\theta} and the \eqn{\theta} estimated with the STF
