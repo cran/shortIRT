@@ -2,7 +2,7 @@
 #'
 #' Create a Short Test Form (STF) using the \eqn{\theta}-target procedure based on the equal segmentation of the latent trait (Equal Interval Procedure, EIP)
 #'
-#' @inheritParams bp
+#' @inheritParams bench
 #' @param theta_targets vector, define the specific \eqn{\theta} targets for the user defined procedure. Might also be the same \eqn{\theta} target repeated for as many times as the number of items to be included in the short test form
 #'
 #'

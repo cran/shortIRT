@@ -2,7 +2,7 @@
 #'
 #' Create a Short Test Form (STF) using the \eqn{\theta}-target procedure based on the unequal segmentation of the latent trait (Unequal Interval Procedure, EIP)
 #'
-#' @inheritParams bp
+#' @inheritParams bench
 #'
 #'
 #' @returns

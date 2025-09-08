@@ -8,6 +8,7 @@
 #' @param starting_theta vector, define the starting \eqn{\theta} of the subjects.  If empty, the \eqn{\theta} values will be estimated from the data
 #' @param num_item integer, the number of items to include in the short test form
 #'
+#'
 #' @returns
 #' A list of length 5:
 #'
@@ -34,12 +35,12 @@
 #' parameters <- data.frame(b, a)
 #' # simulate data
 #' data <- sirt::sim.raschtype(true_theta, b = b, fixed.a = a)
-#' stf <- bp(data, starting_theta = true_theta, item_par = parameters, num_item = 5)
+#' stf <- bench(data, starting_theta = true_theta, item_par = parameters, num_item = 5)
 #' # check the obtained short test form
 #' stf$item_stf
 #' # check the comparison between the short test form and the full-length test
 #' stf$summary
-bp <- function(data,
+bench <- function(data,
                 item_par = NULL,
                 seed = 999,
                 starting_theta = NULL,
